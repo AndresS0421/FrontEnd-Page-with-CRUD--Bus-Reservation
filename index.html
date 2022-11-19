@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Autobuses para Llevar</title>
+</head>
+<body onload="cargarAsientos()">
+    <header class="header">
+        <h1>Autobuses para llevar</h1>
+    </header>
+
+    <div class="hero">
+        <div class="contenido-hero">
+            <h2>¡Reserva ya!</h2>
+
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bus" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="6" cy="17" r="2" />
+                    <circle cx="18" cy="17" r="2" />
+                    <path d="M4 17h-2v-11a1 1 0 0 1 1 -1h14a5 7 0 0 1 5 7v5h-2m-4 0h-8" />
+                    <polyline points="16 5 17.5 12 22 12" />
+                    <line x1="2" y1="10" x2="17" y2="10" />
+                    <line x1="7" y1="5" x2="7" y2="10" />
+                    <line x1="12" y1="5" x2="12" y2="10" />
+                </svg>
+                UNIVERSIDAD DE COLIMA
+            </p>
+            <a href="#" class="btn">RESERVAR</a>
+        </div>
+    </div>
+
+    <div class="contenedor sombra">
+        <h2>Lugares</h2>
+
+        <div class="form">
+            <form>
+                <legend class="legend">Ingresa tus datos</legend>
+    
+                <div id="contenedor-alerta">
+                    <p class="aviso ocultar" id="aviso">MODIFICACIÓN DE RESERVACIÓN:</p>
+                </div>
+
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label for="">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre">
+                    </div>
+                    <div class="campo">
+                        <label for="">Apellido:</label>
+                        <input type="text" id="apellido" placeholder="Tu apellido">
+                    </div>
+                    <div class="campo campo-asiento">
+                        <label for="">Número de Asiento:</label>
+                        <input type="number" id="num" placeholder="Ej. 1, 2, ..." disabled>
+                    </div>
+                </div>
+    
+                <div class="enviar">
+                    <input type="submit" class="boton btn_reservar" value="Reservar" id="reservar">
+                    <input type="submit" class="form_btn btn-confirm ocultar" value="Confirmar" id="confirmar">
+                    <input type="submit" class="form_btn btn-cancel ocultar" value="Cancelar" id="cancelar">
+                </div>
+
+                <div id="actualizar">
+
+                </div>
+            </form>
+        </div>
+
+        <main class="reservacion">
+            <div class="autobus" id="autobus"> <!-- Esto es el contenedor de los asientos -->
+            
+            </div>
+
+            <div class="reservaciones"> <!-- Esto son las visualizaciones de los asientos reservados -->
+                <h3 class="reservaciones-titulo">RESERVACIONES DEL AUTOBÚS:</h3>
+
+                <table class="reservaciones-table">
+                    <thead>
+                        <tr>
+                            <th>NOMBRE:</th>
+                            <th>APELLIDOS:</th>
+                            <th>ASIENTO:</th>
+                            <th>OPCIONES:</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="elements">
+
+                    </tbody>
+                </table>
+            </div>
+        </main> 
+    </div>
+
+    <footer class="footer">
+        <p>© 2022 - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+<script src="JS/index.js"></script>
+</html>
